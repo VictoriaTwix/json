@@ -37,3 +37,22 @@ data = json.loads(text)
 print(data['key'])
 
 В этом примере замените 'file.txt' путь к вашему текстовому файлу и 'key' ключ к данным JSON, к которым вы хотите получить доступ.
+
+
+
+
+
+# Использование функции json_normalize(): Эта функция Pandas позволяет преобразовать вложенные JSON-структуры в плоский DataFrame. Вот пример кода:
+python
+import pandas as pd
+import json
+
+# Загрузка данных из JSON-файла
+with open('data.json') as f:
+    data = json.load(f)
+
+# Преобразование в DataFrame
+df = pd.json_normalize(data, 'your_array_key')
+
+# Вывод DataFrame
+print(df)
